@@ -1,22 +1,25 @@
 ﻿namespace Core.Movers
 {
-    using System.Collections;
-    using System.Collections.Generic;
     using UnityEngine;
+    using UnityEngine.Events;
 
     public class PositionLerpMover : UMover
     {
 
         [Header("Dynamic Data")]
-        [SerializeField] Transform initialTransform;
-        [SerializeField] Transform transformToReach;
+        [SerializeField] Transform transformToMove;
+        [SerializeField] Vector3 positionToReach;
 
-        public Transform InitialTransform { get => initialTransform; set { initialTransform = value; } }
-        public Transform TransformToReach { get => transformToReach; set { transformToReach = value; } }
+        public Transform TransformToMove { get => transformToMove; set { transformToMove = value; } }
+        public Vector3 PositionToReach { get => positionToReach; set { positionToReach = value; } }
+
+        [Header("Events")]
+        [SerializeField] UnityEvent destinationReached;
 
         public void SmoothLerpMove (float timer)
         {
-            initialTransform.position = Vector3.Lerp(initialTransform.position, transformToReach.position, timer);
+            transformToMove.position = Vector3.Lerp(transformToMove.position, positionToReach, timer);
+            if (transformToMove.position == positionToReach) { destinationReached.Invoke(); }
         }
     }
 }
