@@ -1,9 +1,8 @@
 ﻿namespace Core.Raycasts
 {
+    using Events;
     using UnityEngine;
     using UnityEngine.EventSystems;
-
-    using Events;
 
     public class OnGameObjectPointDown : MonoBehaviour, IPointerDownHandler
     {
