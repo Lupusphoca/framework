@@ -1,9 +1,8 @@
-﻿namespace Core.Transformers
+﻿namespace Core.Movers
 {
     using UnityEngine;
 
-    public abstract class UTransformer : MonoBehaviour
+    public abstract class UMover : MonoBehaviour
     {
-        public abstract void Move (Transform transform);
     }
 }

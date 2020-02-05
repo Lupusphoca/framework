@@ -2,18 +2,20 @@
 {
     using UnityEngine;
     using UnityEngine.EventSystems;
+
     using Events;
 
     public class OnGameObjectPointDown : MonoBehaviour, IPointerDownHandler
     {
         [Header("Events")]
-        [SerializeField] GameObjectEvent gameObjectEvent;
         [SerializeField] PointerEventDataEvent pointerEventDataEvent;
+        //[SerializeField] GameObjectEvent gameObjectEvent;
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            pointerEventDataEvent.Invoke(eventData);
-            gameObjectEvent.Invoke(this.gameObject);
+            if (pointerEventDataEvent != null) { pointerEventDataEvent.Invoke(eventData); }
+            //if (gameObjectEvent != null) { gameObjectEvent.Invoke(this.gameObject); }
         }
     }
 }
+//WARNING : This component require a EventSystem in scene to work well
