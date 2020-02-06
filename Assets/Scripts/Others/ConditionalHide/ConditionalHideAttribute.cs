@@ -11,9 +11,24 @@
         //TRUE = Hide in inspector / FALSE = Disable in inspector 
         public bool HideInInspector = false;
 
+        //yes = revert it
+        public bool Revert;
+
         public ConditionalHideAttribute(string conditionalSourceField)
         {
             this.ConditionalSourceField = conditionalSourceField;
+            this.HideInInspector = false;
+        }
+
+        public ConditionalHideAttribute(string conditionalSourceField, string revert)
+        {
+            this.ConditionalSourceField = conditionalSourceField;
+            if (revert == "yes")
+            {
+                this.Revert = true;
+            } else {
+                this.Revert = false;
+            }
             this.HideInInspector = false;
         }
 

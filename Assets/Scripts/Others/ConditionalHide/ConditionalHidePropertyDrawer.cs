@@ -6,6 +6,7 @@
     [CustomPropertyDrawer(typeof(ConditionalHideAttribute))]
     public class ConditionalHidePropertyDrawer : PropertyDrawer
     {
+
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             ConditionalHideAttribute condHAtt = (ConditionalHideAttribute)attribute;
@@ -41,11 +42,18 @@
             bool enabled = true;
             string propertyPath = property.propertyPath; //returns the property path of the property we want to apply the attribute to
             string conditionPath = propertyPath.Replace(property.name, condHAtt.ConditionalSourceField); //changes the path to the conditionalsource property path
+            var revert = condHAtt.Revert;
             SerializedProperty sourcePropertyValue = property.serializedObject.FindProperty(conditionPath);
 
             if (sourcePropertyValue != null)
             {
-                enabled = sourcePropertyValue.boolValue;
+                if (revert)
+                {
+                    enabled = !sourcePropertyValue.boolValue;
+                } else
+                {
+                    enabled = sourcePropertyValue.boolValue;
+                }
             }
             else
             {

@@ -4,12 +4,12 @@
     using UnityEngine;
     using UnityEngine.EventSystems;
 
-    public class OnGameObjectPointDown : MonoBehaviour, IPointerDownHandler
+    public class OnGameObjectPointClick : MonoBehaviour, IPointerClickHandler
     {
         [Header("Events")]
         [SerializeField] PointerEventDataEvent pointerEventDataEvent;
 
-        public void OnPointerDown(PointerEventData eventData)
+        public void OnPointerClick(PointerEventData eventData)
         {
             if (pointerEventDataEvent != null) { pointerEventDataEvent.Invoke(eventData); }
         }
