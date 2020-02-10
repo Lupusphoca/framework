@@ -1,8 +1,8 @@
 ﻿namespace Core.Helpers
 {
+    using System;
     using UnityEngine;
     using UnityEngine.Events;
-    using System.Collections.Generic;
 
     using Core.Enumerations;
 
@@ -11,30 +11,64 @@
         [Header("Events")]
         [SerializeField] UnityEvent unityEvent;
 
-        /*[System.Flags] enum MouseButtons { Left, Right, Middle }
-        [EnumAttribute] MouseButtons GetMouseButtons;
-
-        List<int> ReturnSelectedElements ()
-        {
-            List<int> selectedElements = new List<int>();
-            for (int i = 0; i < System.Enum.GetValues(typeof(MouseButtons)).Length; i++)
-            {
-                int layer = 1 << i;
-                if (((int)GetMouseButtons & layer) != 0)
-                {
-                    selectedElements.Add(i);
-                }
-            }
-            return selectedElements;
-        }*/
-
-        [SerializeField, EnumAttribute] MouseButtons mouseButtons;
+        [SerializeField, Enum] MouseButtons buttonsSelected;
 
         private void FixedUpdate()
         {
-            Debug.Log($"mouse buttons {(int)mouseButtons}");
-           /* if (Input.GetMouseButtonDown((int)mouseButtons))
-            unityEvent.Invoke();*/
+            if (Input.GetKeyDown(KeyCode.U))
+            {
+                foreach (MouseButtons button in Enum.GetValues(typeof(MouseButtons)))
+                {
+                    if(buttonsSelected.HasFlag(button))
+                    {
+                        Debug.Log(button);
+                    }
+                }
+            }
+
+            if (MouseClicked((int)buttonsSelected))
+            {
+                unityEvent.Invoke();
+            }
+        }
+
+        bool MouseClicked (int enumValue) //TODO Change this shitty fuckibg disguting code
+        {
+            switch (enumValue)
+            {
+                case -1:
+                    if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
+                    {
+                        return true;
+                    }
+                    return false;
+                case 1:
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        return true;
+                    }
+                    return false;
+                case 3:
+                    if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+                    {
+                        return true;
+                    }
+                    return false;
+                case 5:
+                    if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(2))
+                    {
+                        return true;
+                    }
+                    return false;
+                case 6:
+                    if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
+                    {
+                        return true;
+                    }
+                    return false;
+                default:
+                    return false;
+            }
         }
     }
 }
