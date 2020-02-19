@@ -1,6 +1,7 @@
 ﻿namespace Core.Helpers
 {
     using System;
+    using System.Linq;
     using UnityEngine;
     using UnityEngine.Events;
 
@@ -11,28 +12,21 @@
         [Header("Events")]
         [SerializeField] UnityEvent unityEvent;
 
-        [SerializeField, Enum] MouseButtons buttonsSelected;
+        [SerializeField, Enum] MouseButtons.Buttons buttonsSelected;
 
         private void FixedUpdate()
         {
             if (Input.GetKeyDown(KeyCode.U))
             {
-                foreach (MouseButtons button in Enum.GetValues(typeof(MouseButtons)))
+                var flags = Enum.GetValues(typeof(MouseButtons.Buttons)).Cast<MouseButtons.Buttons>().Where(s => buttonsSelected.HasFlag(s));
+                foreach (var value in flags)
                 {
-                    if(buttonsSelected.HasFlag(button))
-                    {
-                        Debug.Log(button);
-                    }
+                    Debug.Log(value);
                 }
-            }
-
-            if (MouseClicked((int)buttonsSelected))
-            {
-                unityEvent.Invoke();
             }
         }
 
-        bool MouseClicked (int enumValue) //TODO Change this shitty fuckibg disguting code
+        bool MouseClicked (int enumValue) //TODO Change this shitty fucking disguting code
         {
             switch (enumValue)
             {

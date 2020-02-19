@@ -13,11 +13,12 @@
 
         public void Invoke()
         {
+            InvokedObj.Invoke(Obj);
             var isClass = typeof(T).IsClass;
-            if (AllowNullInvocation /*|| (isClass && Obj != default)*/ || !isClass)
+            /*if (AllowNullInvocation || (isClass && Obj != default) || !isClass)
             {
                 InvokedObj.Invoke(Obj);
-            }
+            }*/
         }
 
         public void Invoke(T obj)
