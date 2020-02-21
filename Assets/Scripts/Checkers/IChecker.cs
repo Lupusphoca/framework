@@ -1,9 +1,7 @@
-﻿namespace Core.Checkers {
-
-  public interface IChecker {
-
-    void Check();
-
-  }
-
+﻿namespace Core.Checkers
+{
+    public interface IChecker
+    {
+        void Check();
+    }
 }
