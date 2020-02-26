@@ -1,5 +1,5 @@
-namespace Core.Checkers {
-
+namespace Core.Checkers
+{
   using UnityEngine;
   using UnityEngine.Events;
 

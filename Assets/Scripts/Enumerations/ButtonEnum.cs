@@ -4,10 +4,10 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using static Core.Enumerations.MouseButtons;
+    using static Core.Enumerations.ButtonEnum;
     using Core.Dictionaries;
 
-    public class MouseButtons : UDictionnary<Buttons, int>
+    public class ButtonEnum : UDictionnary<Buttons, int>
     {
         [System.Flags] public enum Buttons {
             Left = 1, 
@@ -20,20 +20,6 @@
             {Buttons.Right, 1},
             {Buttons.Middle, 2}
         };
-
-        public override Dictionary<Buttons, int> Dictionary => intCorresponding;
-
-        public void Set(Buttons key, int value)
-        {
-            if (intCorresponding.ContainsKey(key))
-            {
-                intCorresponding[key] = value;
-            }
-            else
-            {
-                intCorresponding.Add(key, value);
-            }
-        }
 
         public override Buttons GetKey(int value)
         {

@@ -1,13 +1,14 @@
 ﻿namespace Core.Dictionaries
 {
     using System.Collections.Generic;
+
     using UnityEngine;
 
     public abstract class UDictionnary<T, U> : MonoBehaviour, IDictionary<T, U>
     {
-        public abstract Dictionary<T, U> Dictionary { get; }
+        public virtual Dictionary<T, U> Dictionary { get; }
 
-        public void Set(T key, U value)
+        public virtual void Set(T key, U value)
         {
             if (Dictionary.ContainsKey(key))
             {

@@ -13,7 +13,7 @@
         [Header("Events")]
         [SerializeField] UnityEvent unityEvent;
 
-        [SerializeField, Enum] MouseButtons.Buttons buttonsSelected;
+        [SerializeField, Enum] ButtonEnum.Buttons buttonsSelected;
         List<int> buttonsCode = new List<int>();
 
         private void Start()
@@ -23,9 +23,9 @@
 
         void GetIntEnumSelected()
         {
-            var mouseButtons = new MouseButtons();
-            var flags = Enum.GetValues(typeof(MouseButtons.Buttons)).Cast<MouseButtons.Buttons>().Where(s => buttonsSelected.HasFlag(s));
-            foreach (MouseButtons.Buttons value in flags)
+            var mouseButtons = new ButtonEnum();
+            var flags = Enum.GetValues(typeof(ButtonEnum.Buttons)).Cast<ButtonEnum.Buttons>().Where(s => buttonsSelected.HasFlag(s));
+            foreach (ButtonEnum.Buttons value in flags)
             {
                 buttonsCode.Add(mouseButtons.GetValue(value)); 
             }

@@ -1,4 +1,4 @@
-﻿namespace Core.Raycasts
+﻿namespace Core.Pointers
 {
     using Events;
     using UnityEngine;
@@ -15,4 +15,4 @@
         }
     }
 }
-//WARNING : This component require a EventSystem and Physics Raycaster in scene to work well
+//WARNING : This component require a EventSystem and Physics Raycaster in SCENE to work well

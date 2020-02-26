@@ -1,4 +1,4 @@
-﻿namespace Core.Raycasts
+﻿namespace Core.Pointers
 {
     using Events;
     using UnityEngine;

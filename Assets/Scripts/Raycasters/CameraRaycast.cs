@@ -1,10 +1,10 @@
-﻿namespace Core.Helpers
+﻿namespace Core.Raycasters
 {
     using UnityEngine;
 
     using Core.Events;
 
-    public class CameraRaycast : MonoBehaviour
+    public class CameraRaycast : URaycaster
     {
         RaycastHit raycastHit;
 
@@ -14,12 +14,15 @@
         [Header("Events")]
         [SerializeField] RaycastHitEvent raycastHitEvent;
 
-        public void Raycast ()
+        public override RaycastHit RaycastHit { get => raycastHit; set => raycastHit = value; }
+        public override RaycastHitEvent RaycastHitEvent { get => raycastHitEvent; set => raycastHitEvent = value; }
+
+        public override void Raycast ()
         {
             var ray = camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out raycastHit))
             {
-                raycastHitEvent.Invoke(raycastHit);
+                RaycastHitEvent.Invoke(RaycastHit);
             }
         }
     }
