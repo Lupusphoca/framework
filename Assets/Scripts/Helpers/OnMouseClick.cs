@@ -16,7 +16,7 @@
         [SerializeField, Enum] ButtonEnum.Buttons buttonsSelected;
         List<int> buttonsCode = new List<int>();
 
-        private void Start()
+        void Start()
         {
             GetIntEnumSelected();
         }
@@ -24,14 +24,16 @@
         void GetIntEnumSelected()
         {
             var mouseButtons = new ButtonEnum();
-            var flags = Enum.GetValues(typeof(ButtonEnum.Buttons)).Cast<ButtonEnum.Buttons>().Where(s => buttonsSelected.HasFlag(s));
+            var flags = Enum.GetValues(typeof(ButtonEnum.Buttons))
+                .Cast<ButtonEnum.Buttons>()
+                .Where(s => buttonsSelected.HasFlag(s));
             foreach (ButtonEnum.Buttons value in flags)
             {
                 buttonsCode.Add(mouseButtons.GetValue(value)); 
             }
         }
 
-        private void FixedUpdate()
+        void FixedUpdate()
         {
             if (Input.anyKeyDown)
             {

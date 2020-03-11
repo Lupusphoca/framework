@@ -20,22 +20,17 @@
             this.HideInInspector = false;
         }
 
-        public ConditionalHideAttribute(string conditionalSourceField, string revert)
-        {
-            this.ConditionalSourceField = conditionalSourceField;
-            if (revert == "yes")
-            {
-                this.Revert = true;
-            } else {
-                this.Revert = false;
-            }
-            this.HideInInspector = false;
-        }
-
         public ConditionalHideAttribute(string conditionalSourceField, bool hideInInspector)
         {
             this.ConditionalSourceField = conditionalSourceField;
             this.HideInInspector = hideInInspector;
+        }
+
+        public ConditionalHideAttribute(string conditionalSourceField, bool hideInInspector, bool revert)
+        {
+            this.ConditionalSourceField = conditionalSourceField;
+            this.HideInInspector = hideInInspector;
+            this.Revert = revert;
         }
     }
 }

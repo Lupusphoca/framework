@@ -10,7 +10,7 @@
         [SerializeField] GameObject gameObject;
         [SerializeField] bool useRoot;
         [SerializeField, ConditionalHide("useRoot")] Transform root;
-        [SerializeField, ConditionalHide("useRoot", "yes")] Vector3 instantiatePoint;
+        [SerializeField, ConditionalHide("useRoot", false, true)] Vector3 instantiatePoint;
 
         public GameObject GameObject { get => gameObject; set => gameObject = value; }
         public Transform Root { get => root; set => root = value; }
