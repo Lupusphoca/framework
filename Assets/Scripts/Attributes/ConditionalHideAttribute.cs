@@ -11,7 +11,6 @@
         //TRUE = Hide in inspector / FALSE = Disable in inspector 
         public bool HideInInspector = false;
 
-        //yes = revert it
         public bool Revert;
 
         public ConditionalHideAttribute(string conditionalSourceField)
