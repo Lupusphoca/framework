@@ -1,8 +1,9 @@
 ﻿namespace Core.Physics.Parabola
 {
-    using Core.ConditionalHide;
     using System.Collections.Generic;
     using UnityEngine;
+
+    using Core.ConditionalHide;
 
     public class ParabolaProjectile : MonoBehaviour
     {
@@ -84,7 +85,8 @@
             curvePoints.Clear();
 
             radianAngle = Mathf.Deg2Rad * angle;
-            var maximumDistance = (Mathf.Pow(velocity, 2f) * Mathf.Sin(2 * radianAngle)) / gravity;
+            //var maximumDistance = (Mathf.Pow(velocity, 2f) * Mathf.Sin(2 * radianAngle)) / gravity;
+            var maximumDistance = Mathf.Pow(velocity, 2f) / gravity;
 
             for (int i = 0; i <= Vertices; i++)
             {
@@ -100,10 +102,14 @@
         /// </summary>
         /// <param name="radius">Radius between origin point and new point</param>
         /// <param name="maximumDistance">Maximal radius, distance between origin point and last point</param>
-        /// <returns>Return location of the point curve</returns>
+        /// <returns>Return location of curve point</returns>
         Vector3 CalculateArcPoint(float radius, float maximumDistance)
         {
             var x = radius * maximumDistance;
+            if (Mathf.Cos(radianAngle) < 0)
+            {
+                x = -x;
+            }
             var y = x * Mathf.Tan(radianAngle) - ((gravity * Mathf.Pow(x, 2)) / (2 * Mathf.Pow(velocity, 2) * Mathf.Pow(Mathf.Cos(radianAngle), 2)));
             var newPosition = new Vector3(x, y, 0) + transformLookingAt.position;
             return newPosition;
@@ -140,10 +146,10 @@
             newAngle = Mathf.Deg2Rad * newAngle;
             var x = center.x + (radius * Mathf.Cos(newAngle));
             var z = center.y + (radius * Mathf.Sin(newAngle)) * -1;
-            if (angle > 90f || angle < -90f)
+            if (Mathf.Cos(radianAngle) < 0)
             {
-                x = -x;
-                z = (center.y + (radius * Mathf.Sin(newAngle)));
+                x = center.x + (radius * Mathf.Cos(newAngle)) * -1;
+                z = center.y + (radius * Mathf.Sin(newAngle));
             }
             return new Vector2(x, z);
         }
