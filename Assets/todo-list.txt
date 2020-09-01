@@ -1,0 +1,5 @@
+# Faire un component BreakDebug
+# Transférer les components d'Upside
+# Faire un linker IN - OUT basé sur un ID que le IN va chercher parmis tout les OUT similaire à son abstraction
+# Faire un UCombiner qui permet de fusionner X variables et de les réinterpréter dans un MultipleEventSerialized
+# Faire un template de script

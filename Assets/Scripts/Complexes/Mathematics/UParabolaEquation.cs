@@ -133,10 +133,10 @@
             for (int i = 0; i < PlanarCurvePoint.Count; i++) //Process to move point around Y
             {
                 var flatCenter = new Vector2(TransformLookingAt.position.x, TransformLookingAt.position.z);
-                var flatAngle = TransformLookingAt.rotation.eulerAngles.y;
+                var flatAngle = TransformLookingAt.eulerAngles.y;
                 var pointTargeted = new Vector2(PlanarCurvePoint[i].x, PlanarCurvePoint[i].z);
-                var flatRadius = Vector3.Distance(flatCenter, pointTargeted);
-                var newFinalCurveFlatPoint = CalculateCoordinatesOnCircle(flatCenter, flatAngle, flatRadius);
+                var flatRange = Vector3.Distance(flatCenter, pointTargeted);
+                var newFinalCurveFlatPoint = CalculateCoordinatesOnCircle(flatCenter, flatAngle, flatRange);
 
                 SpatialCurvePoint.Add(new Vector3(newFinalCurveFlatPoint.x, PlanarCurvePoint[i].y, newFinalCurveFlatPoint.y));
             }
@@ -149,16 +149,16 @@
         /// <param name="angle">Angle offset of new point</param>
         /// <param name="radius">Radius of the circle</param>
         /// <returns>Return coordinate of new point find</returns>
-        Vector2 CalculateCoordinatesOnCircle(Vector2 center, float angleAroundY, float radius) //If used for floor referencial, it's X and Z you need to use in Unity
+        Vector2 CalculateCoordinatesOnCircle(Vector2 center, float angleAroundY, float range) //If used for floor referencial, it's X and Z you need to use in Unity
         {
             var newRadianAngleAroundZ = Mathf.Deg2Rad * AngleAroundAxisZ;
             var newRadianAngleAroundY = Mathf.Deg2Rad * angleAroundY;
-            var x = center.x + (radius * Mathf.Cos(newRadianAngleAroundY));
-            var z = center.y + (radius * Mathf.Sin(newRadianAngleAroundY)) * -1;
+            var x = center.x + (range * Mathf.Cos(newRadianAngleAroundY));
+            var z = center.y + (range * Mathf.Sin(newRadianAngleAroundY)) * -1;
             if (Mathf.Cos(newRadianAngleAroundZ) < 0)
             {
-                x = center.x + (radius * Mathf.Cos(newRadianAngleAroundY)) * -1;
-                z = center.y + (radius * Mathf.Sin(newRadianAngleAroundY));
+                x = center.x + (range * Mathf.Cos(newRadianAngleAroundY)) * -1;
+                z = center.y + (range * Mathf.Sin(newRadianAngleAroundY));
             }
             return new Vector2(x, z);
         }

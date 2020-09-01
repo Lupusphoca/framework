@@ -25,7 +25,7 @@
         public override bool UseFixNumberVertices { get => useFixNumberVertices; set => useFixNumberVertices = value; }
         public override int FixNumberVertices { get => fixNumberVertices; set => fixNumberVertices = value; }
         public override int VerticesDivider { get => verticesDivider; set => verticesDivider = value; }
-        public override float AngleAroundAxisZ { get => transformLookingAt.eulerAngles.z; } //! Use rotation around Z of TransformLookingAt
+        public override float AngleAroundAxisZ { get => transformLookingAt.eulerAngles .z; } //! Use rotation around Z of TransformLookingAt
         public override List<Vector3> PreviousFramePlanarCurvePoint { get => previousFramePlanarCurvePoint; set => previousFramePlanarCurvePoint = value; }
         public override List<Vector3> PlanarCurvePoint { get => planarCurvePoint; set => planarCurvePoint = value; }
         public override List<Vector3> SpatialCurvePoint { get => spatialCurvePoint; set => spatialCurvePoint = value; }
@@ -46,7 +46,7 @@
 
             var newPosition = new Vector3(x, y, 0) + transformLookingAt.position;
             return newPosition;
-        }
+        } 
 
         /// <summary>
         /// Calculate maximum distance needed to avoid a too much big value based on trigonometric calculation : https://fr.wikipedia.org/wiki/Cercle_trigonom%C3%A9trique
