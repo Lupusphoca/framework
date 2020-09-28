@@ -1,0 +1,11 @@
+[Header ("Data")] => Script can't work without this data and can be set by this inspector view or via script
+
+[Header ("Required data")] => Script can't work without this data and need to be set in the inspector (No Accessor)
+[Header ("Dynamic data")]] => Script can't work without this data and need to be set via script (Accessor needed)
+
+[Header ("Optional dynamic data")] => Script can work without this data and need to be set in the inspector (No Accessor)
+[Header ("Optional required data")] => Script can work without this data and need to be set via script (Accessor needed)
+
+[Header ("Events")] => Event throw when script end a task
+
+[Header ("Settings")] => Design settings to adjust script utilities
