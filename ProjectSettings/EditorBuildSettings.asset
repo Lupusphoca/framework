@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Baseball/Scenes/Baseball_Menu.unity
+    path: Assets/Games/Roleplay-Tool/Scenes/Roleplay.unity
+    guid: 2d2e7af409382004a97c3918a41c4576
+  - enabled: 1
+    path: Assets/Games/Baseball/Scenes/Baseball_Menu.unity
     guid: 36acf11d782ff074c879a0fbe9d04aea
   - enabled: 1
-    path: Assets/Baseball/Scenes/Baseball_Play.unity
+    path: Assets/Games/Baseball/Scenes/Baseball_Play.unity
     guid: 78b64b6c73eebf94eb4d16820bd43195
   m_configObjects: {}

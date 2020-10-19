@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using UnityEngine;
 
-    using PierreARNAUDET.Core.ConditionalHide;
+    using PierreARNAUDET.Core.Attributes;
     using PierreARNAUDET.Core.Complexes.Obsolete;
 
     public class ProjectileMotionParabolaEquation : UParabolaEquation

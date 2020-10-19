@@ -2,7 +2,7 @@
 {
     using UnityEngine;
 
-    using PierreARNAUDET.Core.ConditionalHide;
+    using PierreARNAUDET.Core.Attributes;
     using PierreARNAUDET.Core.Events;
 
     public class GameObjectInstantiator : MonoBehaviour

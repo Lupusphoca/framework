@@ -1,0 +1,19 @@
+-----OBJECT----- : Parent of big group of objects
+TypeScript_Abstraction : Name the main component of the object
+<Object> : To name of specific type of unity object like Canvas or Panel
+[Component - Component] : To name all components placed in this object
+(Description) : To make a quick description of the object utility
+
+namespace PierreARNAUDET.Core.TypeScript
+{
+	[Header("Data")] : To regroup all the required data
+	[Header("Settings")] : To regroup all the modifiable setting variable
+	[Header("Events")] : To regroup all the UnityEvent abstraction
+
+	void Function ()
+	{
+		var variable = new Variable();
+	}
+}
+
+1 - If you don't find any interresting name for a value, just name it with the value type preceed by an @ : @int

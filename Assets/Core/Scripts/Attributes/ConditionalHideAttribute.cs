@@ -1,4 +1,4 @@
-﻿namespace PierreARNAUDET.Core.ConditionalHide
+﻿namespace PierreARNAUDET.Core.Attributes
 {
     using System;
     using UnityEngine;

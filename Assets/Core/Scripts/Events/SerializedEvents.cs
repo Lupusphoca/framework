@@ -2,9 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
+
     using UnityEngine;
     using UnityEngine.Events;
     using UnityEngine.EventSystems;
+    using UnityEngine.UI;
 
     using PierreARNAUDET.Core.ScriptableObjects.Models;
 
@@ -19,9 +21,11 @@
     [Serializable] public class GameObjectEvent : UnityEvent<GameObject> { }
     [Serializable] public class GradientEvent : UnityEvent<Gradient> { }
     [Serializable] public class IntEvent : UnityEvent<int> { }
+    [Serializable] public class ImageEvent : UnityEvent<Image> { }
     [Serializable] public class PhysicsMaterial2DEvent : UnityEvent<PhysicsMaterial2D> { }
     [Serializable] public class PointerEventDataEvent : UnityEvent<PointerEventData> { }
     [Serializable] public class QuaternionEvent : UnityEvent<Quaternion> { }
+    [Serializable] public class RawImageEvent : UnityEvent<RawImage> { }
     [Serializable] public class RaycastHitEvent : UnityEvent<RaycastHit> { }
     [Serializable] public class RigidbodyEvent : UnityEvent<Rigidbody> { }
     [Serializable] public class Rigidbody2DEvent : UnityEvent<Rigidbody2D> { }
@@ -30,6 +34,7 @@
     [Serializable] public class RigidbodySleepMode2DEvent : UnityEvent<RigidbodySleepMode2D> { }
     [Serializable] public class RigidbodyType2DEvent : UnityEvent<RigidbodyType2D> { }
     [Serializable] public class StringEvent : UnityEvent<string> { }
+    [Serializable] public class Texture2DEvent : UnityEvent<Texture2D> { }
     [Serializable] public class TransformEvent : UnityEvent<Transform> { }
     [Serializable] public class Vector2Event : UnityEvent<Vector2> { }
     [Serializable] public class Vector3Event : UnityEvent<Vector3> { }

@@ -2,9 +2,10 @@
 {
     #if UNITY_EDITOR
     using System.Collections.Generic;
+
     using UnityEngine;
 
-    using Core.ConditionalHide;
+    using PierreARNAUDET.Core.Attributes;
 
     public class ParabolaProjectile : MonoBehaviour
     {

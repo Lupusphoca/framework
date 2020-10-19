@@ -687,6 +687,82 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  gameObject: {fileID: 0}
+--- !u!1 &188990537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 188990538}
+  - component: {fileID: 188990539}
+  m_Layer: 0
+  m_Name: Injector_Vector2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &188990538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188990537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 935110219}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &188990539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188990537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f459974f2540245a456ba568d0a77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vector2ToInject: {x: 0, y: 0}
+  vector2Event:
+    m_PersistentCalls:
+      m_Calls: []
+  magnitudeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  normalizedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  sqrMagnitudeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  xEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  yEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1704407056}
+        m_TargetAssemblyTypeName: PierreARNAUDET.Core.Operations.UOperation`1[[System.Single,
+          mscorlib
+        m_MethodName: OperateLeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &193960231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,6 +2067,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  gameObject: {fileID: 0}
 --- !u!1 &501356588
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,6 +2329,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  gameObject: {fileID: 0}
 --- !u!1 &539889822
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,7 +2486,7 @@ GameObject:
   - component: {fileID: 553880844}
   - component: {fileID: 553880843}
   m_Layer: 0
-  m_Name: MC_Floor [SpriteRenderer - BoxCollider2D]
+  m_Name: MC (Floor) [SpriteRenderer - BoxCollider2D]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3068,6 +3146,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  gameObject: {fileID: 0}
 --- !u!1 &754589369
 GameObject:
   m_ObjectHideFlags: 0
@@ -3584,13 +3663,14 @@ MonoBehaviour:
   result:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1200830229}
+        m_TargetAssemblyTypeName: PierreARNAUDET.Core.Checkers.FloatSuperiorChecker,
+          Assembly-CSharp
+        m_MethodName: set_FloatReference
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3805,6 +3885,10 @@ Transform:
   m_Children:
   - {fileID: 399174616}
   - {fileID: 1851509405}
+  - {fileID: 188990538}
+  - {fileID: 1704407055}
+  - {fileID: 1200830228}
+  - {fileID: 1608865734}
   m_Father: {fileID: 212684586}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3820,7 +3904,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   m_Layer: 0
-  m_Name: Multicomponent [Camera - AudioListener]
+  m_Name: MC [Camera - AudioListener]
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4376,7 +4460,7 @@ GameObject:
   - component: {fileID: 1178159275}
   - component: {fileID: 1178159276}
   m_Layer: 0
-  m_Name: MC_Ball [SpriteRenderer - BoxCollider2D - Rigidbody2D]
+  m_Name: MC (Ball) [SpriteRenderer - BoxCollider2D - Rigidbody2D]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4487,6 +4571,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1200830227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1200830228}
+  - component: {fileID: 1200830229}
+  m_Layer: 0
+  m_Name: Checker_FloatSuperior
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1200830228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200830227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 935110219}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1200830229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200830227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d0e4914021ea646bf0bc1891915831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invertCheck: 0
+  floatReference: 0
+  validFloat:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1608865735}
+        m_TargetAssemblyTypeName: PierreARNAUDET.Core.Helpers.LogDebug, Assembly-CSharp
+        m_MethodName: DisplayLogDebug
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BALL IS TOO FAR TO GENERATE TERRAIN
+          m_BoolArgument: 0
+        m_CallState: 2
+  invalidFloat:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1608865735}
+        m_TargetAssemblyTypeName: PierreARNAUDET.Core.Helpers.LogDebug, Assembly-CSharp
+        m_MethodName: DisplayLogDebug
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: GENERATING TERRAIN
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1238162462
 GameObject:
   m_ObjectHideFlags: 0
@@ -5992,6 +6151,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  gameObject: {fileID: 0}
 --- !u!4 &1504030896
 Transform:
   m_ObjectHideFlags: 0
@@ -6272,6 +6432,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  gameObject: {fileID: 0}
 --- !u!1 &1567643207
 GameObject:
   m_ObjectHideFlags: 0
@@ -6470,6 +6631,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  gameObject: {fileID: 0}
+--- !u!1 &1608865733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1608865734}
+  - component: {fileID: 1608865735}
+  m_Layer: 0
+  m_Name: LogDebug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1608865734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608865733}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 935110219}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1608865735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608865733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb25c81b841b4af4bb4404c6d92fe2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1619897984
 GameObject:
   m_ObjectHideFlags: 0
@@ -6807,6 +7012,67 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: PierreARNAUDET.Core.Injectors.UInjector`1[[UnityEngine.Transform,
           UnityEngine
         m_MethodName: Inject
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &1704407054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1704407055}
+  - component: {fileID: 1704407056}
+  m_Layer: 0
+  m_Name: Operation_FloatSubstraction [Remove floor height]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1704407055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704407054}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 935110219}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1704407056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704407054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c1688e68aa1c44084024100602303e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftOperand: 0
+  rightOperand: 0
+  result:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1200830229}
+        m_TargetAssemblyTypeName: PierreARNAUDET.Core.Checkers.UChecker`1[[System.Single,
+          mscorlib
+        m_MethodName: Check
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7541,7 +7807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c7ec6fa0c6e5148a855550ee778412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugToInject: {fileID: 0}
+  debugToInject: {fileID: 11400000, guid: cc76eff3408bbc74aa80794b20fa0a33, type: 2}
   distanceEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -7550,7 +7816,20 @@ MonoBehaviour:
       m_Calls: []
   worldPositionEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 188990539}
+        m_TargetAssemblyTypeName: PierreARNAUDET.Core.Injectors.UInjector`1[[UnityEngine.Vector2,
+          UnityEngine
+        m_MethodName: Inject
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1870867678
 GameObject:
   m_ObjectHideFlags: 0
@@ -8022,6 +8301,7 @@ MonoBehaviour:
           m_StringArgument: NEW RECORD
           m_BoolArgument: 0
         m_CallState: 2
+  gameObject: {fileID: 0}
 --- !u!1 &2030829591
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-﻿namespace PierreARNAUDET.Core.ConditionalHide
+﻿namespace PierreARNAUDET.Core.Attributes
 {
     #if UNITY_EDITOR
     using UnityEngine;
