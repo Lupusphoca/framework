@@ -1,4 +1,4 @@
-﻿namespace PierreARNAUDET.Modules.DOT
+﻿namespace PierreARNAUDET.Modules.DOT.Rigidbodies2D
 {
     using UnityEngine;
     using UnityEngine.Events;
@@ -7,30 +7,35 @@
 
     using DG.Tweening;
 
-    public class FadeAudioSourceDOT : UAudioSourceDOT
+    public class MoveYRigidbody2DDOT : URigidbody2DDOT
     {
         [Data]
-        [SerializeField] AudioSource audioSource;
-        public override AudioSource AudioSource { get => audioSource; set => audioSource = value; }
+        [SerializeField] Rigidbody2D rigidbody2D;
+        public override Rigidbody2D Rigidbody2D { get => rigidbody2D; set => rigidbody2D = value; }
+
+        [Settings]
         [SerializeField] float endValue;
         public float EndValue { get => endValue; set => endValue = value; }
         [SerializeField] float duration;
         public float Duration { get => duration; set => duration = value; }
+        [SerializeField] bool snapping;
+        public bool Snapping { get => snapping; set => snapping = value; }
 
         [Events]
         [SerializeField] UnityEvent @event;
         public override UnityEvent @Event { get => @event; set => @event = value; }
 
-        public void DOFade(float newEndValue, float newDuration)
+        public void DOMoveY(float newEndValue, float newDuration, bool newSnapping)
         {
             endValue = newEndValue;
             duration = newDuration;
-            DOFade();
+            snapping = newSnapping;
+            DOMoveY();
         }
 
-        public void DOFade()
+        public void DOMoveY()
         {
-            audioSource.DOFade(endValue, duration);
+            rigidbody2D.DOMoveY(endValue, duration, snapping);
             @event.Invoke();
         }
     }

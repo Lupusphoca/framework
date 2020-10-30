@@ -1,4 +1,4 @@
-﻿namespace PierreARNAUDET.Modules.DOT
+﻿namespace PierreARNAUDET.Modules.DOT.Cameras
 {
     using UnityEngine;
     using UnityEngine.Events;
@@ -7,11 +7,13 @@
 
     using DG.Tweening;
 
-    public class PitchAudioSourceDOT : UAudioSourceDOT
+    public class FarClipPlaneCameraDOT : UCameraDOT
     {
         [Data]
-        [SerializeField] AudioSource audioSource;
-        public override AudioSource AudioSource { get => audioSource; set => audioSource = value; }
+        [SerializeField] Camera camera;
+        public override Camera Camera { get => camera; set => camera = value; }
+
+        [Settings]
         [SerializeField] float endValue;
         public float EndValue { get => endValue; set => endValue = value; }
         [SerializeField] float duration;
@@ -21,16 +23,16 @@
         [SerializeField] UnityEvent @event;
         public override UnityEvent @Event { get => @event; set => @event = value; }
 
-        public void DOPitch(float newEndValue, float newDuration)
+        public void DOFarClipPlane(float newEndValue, float newDuration)
         {
             endValue = newEndValue;
             duration = newDuration;
-            DOPitch();
+            DOFarClipPlane();
         }
 
-        public void DOPitch()
+        public void DOFarClipPlane()
         {
-            audioSource.DOPitch(endValue, duration);
+            camera.DOFarClipPlane(endValue, duration);
             @event.Invoke();
         }
     }

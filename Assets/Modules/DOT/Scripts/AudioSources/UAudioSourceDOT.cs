@@ -1,4 +1,4 @@
-﻿namespace PierreARNAUDET.Modules.DOT
+﻿namespace PierreARNAUDET.Modules.DOT.AudioSources
 {
     using UnityEngine;
     using UnityEngine.Events;

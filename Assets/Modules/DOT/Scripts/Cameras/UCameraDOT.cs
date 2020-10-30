@@ -1,4 +1,4 @@
-﻿namespace PierreARNAUDET.Modules.DOT
+﻿namespace PierreARNAUDET.Modules.DOT.Cameras
 {
     using UnityEngine;
     using UnityEngine.Events;
