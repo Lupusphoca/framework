@@ -1,17 +1,20 @@
-﻿namespace PierreARNAUDET.Modules.DOT.Cameras
+﻿namespace PierreARNAUDET.Modules.DOT.Outlines
 {
     using UnityEngine;
     using UnityEngine.Events;
+    using UnityEngine.UI;
 
     using PierreARNAUDET.Core.Attributes;
 
     using DG.Tweening;
 
-    public class ColorCameraDOT : UCameraDOT
+    public class ColorOutlineDOT : UOutlineDOT
     {
         [Data]
-        [SerializeField] Camera camera;
-        public override Camera Camera { get => camera; set => camera = value; }
+        [SerializeField] Outline outline;
+        public override Outline Outline { get => outline; set => outline = value; }
+
+        [Settings]
         [SerializeField] Color endValue;
         public Color EndValue { get => endValue; set => endValue = value; }
         [SerializeField] float duration;
@@ -30,7 +33,7 @@
 
         public void DOColor()
         {
-            camera.DOColor(endValue, duration);
+            outline.DOColor(endValue, duration);
             @event.Invoke();
         }
     }

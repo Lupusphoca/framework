@@ -1,4 +1,4 @@
-﻿namespace PierreARNAUDET.Modules.DOT.Cameras
+﻿namespace PierreARNAUDET.Modules.DOT.SpriteRenderers
 {
     using UnityEngine;
     using UnityEngine.Events;
@@ -7,11 +7,13 @@
 
     using DG.Tweening;
 
-    public class ColorCameraDOT : UCameraDOT
+    public class ColorSpriteRendererDOT : USpriteRendererDOT
     {
         [Data]
-        [SerializeField] Camera camera;
-        public override Camera Camera { get => camera; set => camera = value; }
+        [SerializeField] SpriteRenderer spriteRenderer;
+        public override SpriteRenderer SpriteRenderer { get => spriteRenderer; set => spriteRenderer = value; }
+
+        [Settings]
         [SerializeField] Color endValue;
         public Color EndValue { get => endValue; set => endValue = value; }
         [SerializeField] float duration;
@@ -30,7 +32,7 @@
 
         public void DOColor()
         {
-            camera.DOColor(endValue, duration);
+            spriteRenderer.DOColor(endValue, duration);
             @event.Invoke();
         }
     }

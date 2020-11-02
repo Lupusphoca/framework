@@ -1,12 +1,13 @@
 ﻿namespace PierreARNAUDET.Modules.DOT.Rigidbodies
 {
+    using System.Collections.Generic;
+
     using UnityEngine;
     using UnityEngine.Events;
 
     using PierreARNAUDET.Core.Attributes;
 
     using DG.Tweening;
-    using System.Collections.Generic;
 
     public class PathRigidbodyDOT : URigidbodyDOT
     {

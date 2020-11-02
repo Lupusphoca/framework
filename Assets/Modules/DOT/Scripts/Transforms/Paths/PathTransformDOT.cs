@@ -1,4 +1,4 @@
-﻿namespace PierreARNAUDET.Modules.DOT.Rigidbodies
+﻿namespace PierreARNAUDET.Modules.DOT.Transforms
 {
     using System.Collections.Generic;
 
@@ -9,11 +9,11 @@
 
     using DG.Tweening;
 
-    public class LocalPathRigidbodyDOT : URigidbodyDOT
+    public class PathTransformDOT : UTransformDOT
     {
         [Data]
-        [SerializeField] Rigidbody rigidbody;
-        public override Rigidbody Rigidbody { get => rigidbody; set => rigidbody = value; }
+        [SerializeField] Transform transform;
+        public override Transform Transform { get => transform; set => transform = value; }
 
         [Settings]
         [SerializeField] List<Vector3> waypoints;
@@ -33,7 +33,7 @@
         [SerializeField] UnityEvent @event;
         public override UnityEvent @Event { get => @event; set => @event = value; }
 
-        public void DOLocalPath(List<Vector3> newWaypoints, float newDuration, PathType newPathType, PathMode newPathMode, int newResolution, Color newGizmoColor)
+        public void DOPath(List<Vector3> newWaypoints, float newDuration, PathType newPathType, PathMode newPathMode, int newResolution, Color newGizmoColor)
         {
             waypoints = newWaypoints;
             duration = newDuration;
@@ -41,13 +41,13 @@
             pathMode = newPathMode;
             resolution = newResolution;
             gizmoColor = newGizmoColor;
-            DOLocalPath();
+            DOPath();
         }
 
-        public void DOLocalPath()
+        public void DOPath()
         {
             var newWaypoints = waypoints.ToArray();
-            rigidbody.DOLocalPath(newWaypoints, duration, pathType, pathMode, resolution, gizmoColor);
+            transform.DOPath(newWaypoints, duration, pathType, pathMode, resolution, gizmoColor);
             @event.Invoke();
         }
     }

@@ -1,17 +1,20 @@
-﻿namespace PierreARNAUDET.Modules.DOT.Cameras
+﻿namespace PierreARNAUDET.Modules.DOT.Graphics
 {
     using UnityEngine;
     using UnityEngine.Events;
+    using UnityEngine.UI;
 
     using PierreARNAUDET.Core.Attributes;
 
     using DG.Tweening;
 
-    public class ColorCameraDOT : UCameraDOT
+    public class BlendableColorGraphicDOT : UGraphicDOT
     {
         [Data]
-        [SerializeField] Camera camera;
-        public override Camera Camera { get => camera; set => camera = value; }
+        [SerializeField] Graphic graphic;
+        public override Graphic Graphic { get => graphic; set => graphic = value; }
+
+        [Settings]
         [SerializeField] Color endValue;
         public Color EndValue { get => endValue; set => endValue = value; }
         [SerializeField] float duration;
@@ -21,16 +24,16 @@
         [SerializeField] UnityEvent @event;
         public override UnityEvent @Event { get => @event; set => @event = value; }
 
-        public void DOColor(Color newEndValue, float newDuration)
+        public void DOBlendableColor(Color newEndValue, float newDuration)
         {
             endValue = newEndValue;
             duration = newDuration;
-            DOColor();
+            DOBlendableColor();
         }
 
-        public void DOColor()
+        public void DOBlendableColor()
         {
-            camera.DOColor(endValue, duration);
+            graphic.DOBlendableColor(endValue, duration);
             @event.Invoke();
         }
     }

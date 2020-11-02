@@ -1,19 +1,18 @@
-﻿namespace PierreARNAUDET.Modules.DOT.Rigidbodies
+﻿namespace PierreARNAUDET.Modules.DOT.Transforms
 {
-    using System.Collections.Generic;
-
     using UnityEngine;
     using UnityEngine.Events;
 
     using PierreARNAUDET.Core.Attributes;
 
     using DG.Tweening;
+    using System.Collections.Generic;
 
-    public class LocalPathRigidbodyDOT : URigidbodyDOT
+    public class LocalPathTransformDOT : UTransformDOT
     {
         [Data]
-        [SerializeField] Rigidbody rigidbody;
-        public override Rigidbody Rigidbody { get => rigidbody; set => rigidbody = value; }
+        [SerializeField] Transform transform;
+        public override Transform Transform { get => transform; set => transform = value; }
 
         [Settings]
         [SerializeField] List<Vector3> waypoints;
@@ -47,7 +46,7 @@
         public void DOLocalPath()
         {
             var newWaypoints = waypoints.ToArray();
-            rigidbody.DOLocalPath(newWaypoints, duration, pathType, pathMode, resolution, gizmoColor);
+            transform.DOLocalPath(newWaypoints, duration, pathType, pathMode, resolution, gizmoColor);
             @event.Invoke();
         }
     }
