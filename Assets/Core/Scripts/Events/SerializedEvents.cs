@@ -41,6 +41,7 @@
     #endregion
 
     #region multiple
+    [Serializable] public class GameObjectListEvent : UnityEvent<List<GameObject>> { }
     [Serializable] public class Vector3ListEvent : UnityEvent<List<Vector3>> { }
     [Serializable] public class Vector3ArrayEvent : UnityEvent<Vector3[]> { }
     #endregion

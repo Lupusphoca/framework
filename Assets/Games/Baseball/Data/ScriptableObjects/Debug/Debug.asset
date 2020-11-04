@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dfc963e6068ed64586abb8cb8d183fd, type: 3}
   m_Name: Debug
   m_EditorClassIdentifier: 
-  distance: 0
-  velocity: 0
+  distance: 23.922632
+  velocity: 9.374442
+  worldPosition: {x: 24.422632, y: 0.5051771}
