@@ -51,5 +51,6 @@
 
     #region multiple scriptable
     [Serializable] public class ListVector3ScriptableObjectEvent : UnityEvent<ListVector3ScriptableObject> { }
+    [Serializable] public class ListGameObjectScriptableObjectEvent : UnityEvent<ListGameObjectScriptableObject> { }
     #endregion
 }
