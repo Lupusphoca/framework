@@ -10,7 +10,7 @@
         public Transform Target { get => target; set => target = value; }
 
         #region Positions
-        [Header ("Data : Positions")]
+        [Header("Data : Positions")]
         [SerializeField] Transform transformLookingAt;
         public Transform TransformLookingAt { get => transformLookingAt; set => transformLookingAt = value; }
 
@@ -21,7 +21,7 @@
         /// Set a new position to the transform working on using Vector3
         /// </summary>
         /// <param name="newTransform">Vector3 to copy</param>
-        public void SetPosition (Vector3 newPosition)
+        public void SetPosition(Vector3 newPosition)
         {
             if (target != null)
             {
@@ -33,7 +33,7 @@
         /// Set a new position to the transform working on using Transform
         /// </summary>
         /// <param name="newTransform">Transform to copy</param>
-        public void SetPosition (Transform newTransform)
+        public void SetPosition(Transform newTransform)
         {
             if (target != null)
             {
@@ -83,6 +83,35 @@
             if (target != null)
             {
                 target.rotation = newRotation;
+            }
+        }
+        #endregion
+
+        #region GetSideVector3
+        public enum Side { Up, Right, Forward };
+
+        [Header("Data : Side Vector3")]
+        [SerializeField] Side transformSide;
+        public Side TransformSide { get => transformSide; set => transformSide = value; }
+
+        [Header("Event : Side Vector3")]
+        [SerializeField] Vector3Event choosedVector3Side;
+
+        public void GetSideVector3()
+        {
+            switch (transformSide)
+            {
+                case Side.Up:
+                    choosedVector3Side.Invoke(target.up);
+                    break;
+                case Side.Right:
+                    choosedVector3Side.Invoke(target.right);
+                    break;
+                case Side.Forward:
+                    choosedVector3Side.Invoke(target.forward);
+                    break;
+                default:
+                    break;
             }
         }
         #endregion
