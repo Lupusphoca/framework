@@ -10,8 +10,8 @@
         GameObject instantiateGameObject;
 
         [Header("Data")]
-        [SerializeField] GameObject gameObject;
-        public GameObject GameObject { get => gameObject; set => gameObject = value; }
+        [SerializeField] GameObject _gameObject;
+        public GameObject GameObject { get => _gameObject; set => _gameObject = value; }
         [SerializeField] bool useRoot;
         [SerializeField, ConditionalHide("useRoot", false, false)] Transform root;
         public Transform Root { get => root; set => root = value; }
@@ -27,7 +27,7 @@
         /// </summary>
         public void Instantiate ()
         {
-            Instantiate(gameObject);
+            Instantiate(_gameObject);
         }
 
         /// <summary>

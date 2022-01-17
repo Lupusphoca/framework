@@ -8,6 +8,6 @@
     {
         public abstract Text Text { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

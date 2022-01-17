@@ -7,6 +7,6 @@
     {
         public abstract CanvasGroup CanvasGroup { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

@@ -3,6 +3,7 @@
     using System.Collections;
 
     using UnityEngine;
+    using UnityEngine.Networking;
 
     using SFB;
 
@@ -38,8 +39,6 @@
 
         public void OpenFilePanel()
         {
-
-
             var paths = StandaloneFileBrowser.OpenFilePanel("", "", extensionFilters, false);
             if (paths.Length > 0)
             {
@@ -50,9 +49,20 @@
 
         private IEnumerator OutputRoutine(string url)
         {
-            var loader = new WWW(url);
-            yield return loader;
-            texture2DEvent.Invoke(loader.texture);
+            using (UnityWebRequest loader = UnityWebRequestTexture.GetTexture(url))
+            {
+                yield return loader.SendWebRequest();
+
+                if (loader.result != UnityWebRequest.Result.Success)
+                {
+                    Debug.Log(loader.error);
+                }
+                else
+                {
+                    var texture = DownloadHandlerTexture.GetContent(loader); // Get downloaded asset bundle
+                    texture2DEvent.Invoke(texture);
+                }
+            }
         }
     }
 }

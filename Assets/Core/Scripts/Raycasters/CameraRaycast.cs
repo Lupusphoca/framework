@@ -6,12 +6,12 @@
 
     public class CameraRaycast : URaycaster
     {
-        RaycastHit raycastHit;
+        private RaycastHit raycastHit;
         public override RaycastHit RaycastHit { get => raycastHit; set => raycastHit = value; }
 
         [Header("Data")]
-        [SerializeField] Camera camera;
-        public Camera Camera { get => camera; set => camera = value; }
+        [SerializeField] Camera _camera;
+        public Camera Camera { get => _camera; set => _camera = value; }
 
         [Header("Events")]
         [SerializeField] RaycastHitEvent raycastHitEvent;
@@ -19,7 +19,7 @@
 
         public override void Raycast ()
         {
-            var ray = camera.ScreenPointToRay(Input.mousePosition);
+            var ray = _camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out raycastHit))
             {
                 RaycastHitEvent.Invoke(RaycastHit);

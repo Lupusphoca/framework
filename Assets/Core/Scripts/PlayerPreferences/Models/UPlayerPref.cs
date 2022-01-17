@@ -31,8 +31,8 @@
             return false;
         }
 
-        #if UNITY_EDITOR
-        void Reset() => key = name;
-        #endif
+#if UNITY_EDITOR
+        new void Reset() => key = name;
+#endif
     }
 }

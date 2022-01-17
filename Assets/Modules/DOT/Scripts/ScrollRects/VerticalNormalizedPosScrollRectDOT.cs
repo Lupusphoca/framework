@@ -23,8 +23,8 @@
         public bool Snapping { get => snapping; set => snapping = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOVerticalNormalizedPos(float newEndValue, float newDuration, bool newSnapping)
         {
@@ -37,7 +37,7 @@
         public void DOVerticalNormalizedPos()
         {
             scrollRect.DOVerticalNormalizedPos(endValue, duration, snapping);
-            @event.Invoke();
+            _event.Invoke();
         }
     }
 }

@@ -10,7 +10,7 @@
     public class LookAtTransformDOT : UTransformDOT
     {
         [Data]
-        [SerializeField] Transform transform;
+        [SerializeField] Transform _transform;
         public override Transform Transform { get => Transform; set => Transform = value; }
 
         [Settings]
@@ -24,8 +24,8 @@
         public Vector3 Up { get => up; set => up = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOLookAt(Vector3 newTowards, float newDuration, AxisConstraint newAxisConstraint, Vector3 newUp)
         {
@@ -38,8 +38,8 @@
 
         public void DOLookAt()
         {
-            transform.DOLookAt(towards, duration, axisConstraint, up);
-            @event.Invoke();
+            _transform.DOLookAt(towards, duration, axisConstraint, up);
+            _event.Invoke();
         }
     }
 }

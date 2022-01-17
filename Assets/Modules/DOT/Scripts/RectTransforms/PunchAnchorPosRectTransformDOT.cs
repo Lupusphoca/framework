@@ -26,8 +26,8 @@
         public bool Snapping { get => snapping; set => snapping = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOPunchAnchorPos(Vector2 newPunch, float newDuration, int newVibrato, float newElasticity, bool newSnapping)
         {
@@ -42,7 +42,7 @@
         public void DOPunchAnchorPos()
         {
             rectTransform.DOPunchAnchorPos(punch, duration, vibrato, elasticity, snapping);
-            @event.Invoke();
+            _event.Invoke();
         }
     }
 }

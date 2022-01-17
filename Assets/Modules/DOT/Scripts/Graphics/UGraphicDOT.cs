@@ -8,6 +8,6 @@
     {
         public abstract Graphic Graphic { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

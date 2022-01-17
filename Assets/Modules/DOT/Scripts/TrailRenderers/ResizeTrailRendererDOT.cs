@@ -22,8 +22,8 @@
         public float Duration { get => duration; set => duration = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOResize(float newStartWidth, float newEndWidth, float newDuration)
         {
@@ -36,7 +36,7 @@
         public void DOResize()
         {
             trailRenderer.DOResize(startWidth, endWidth, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
     }
 }

@@ -7,6 +7,6 @@
     {
         public abstract Material Material { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

@@ -7,6 +7,6 @@
     {
         public abstract AudioSource AudioSource { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

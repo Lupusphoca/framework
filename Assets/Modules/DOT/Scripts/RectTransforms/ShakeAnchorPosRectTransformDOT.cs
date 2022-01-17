@@ -28,8 +28,8 @@
         public bool FadeOut { get => fadeOut; set => fadeOut = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOShakeAnchorPos(float newDuration, float newStrength, int newVibrato, float newRandomness, bool newSnapping, bool newFadeOut)
         {
@@ -45,7 +45,7 @@
         public void DOShakeAnchorPos()
         {
             rectTransform.DOShakeAnchorPos(duration, strength, vibrato, randomness, snapping, fadeOut);
-            @event.Invoke();
+            _event.Invoke();
         }
     }
 }

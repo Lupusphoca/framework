@@ -8,8 +8,8 @@
     public class Collider2DInvoker : UInvoker<Collider2D>
     {
         [Header("Data")]
-        [SerializeField] Collider2D collider2D;
-        public override Collider2D Obj { get => collider2D; set => collider2D = value; }
+        [SerializeField] Collider2D _collider2D;
+        public override Collider2D Obj { get => _collider2D; set => _collider2D = value; }
 
         [Header("Events")]
         [SerializeField] Collider2DEvent collider2DEvent;

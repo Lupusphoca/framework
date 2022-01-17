@@ -10,8 +10,8 @@
     public class LookAtRigidbodyDOT : URigidbodyDOT
     {
         [Data]
-        [SerializeField] Rigidbody rigidbody;
-        public override Rigidbody Rigidbody { get => rigidbody; set => rigidbody = value; }
+        [SerializeField] Rigidbody _rigidbody;
+        public override Rigidbody Rigidbody { get => _rigidbody; set => _rigidbody = value; }
 
         [Settings]
         [SerializeField] Vector3 towards;
@@ -24,8 +24,8 @@
         public Vector3 Up { get => up; set => up = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOLookAt(Vector3 newTowards, float newDuration, AxisConstraint newAxisConstraint, Vector3 newUp)
         {
@@ -38,8 +38,8 @@
 
         public void DOLookAt()
         {
-            rigidbody.DOLookAt(towards, duration, axisConstraint, up);
-            @event.Invoke();
+            _rigidbody.DOLookAt(towards, duration, axisConstraint, up);
+            _event.Invoke();
         }
     }
 }

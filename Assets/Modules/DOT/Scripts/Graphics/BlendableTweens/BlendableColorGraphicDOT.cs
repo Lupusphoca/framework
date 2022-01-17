@@ -21,8 +21,8 @@
         public float Duration { get => duration; set => duration = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOBlendableColor(Color newEndValue, float newDuration)
         {
@@ -34,7 +34,7 @@
         public void DOBlendableColor()
         {
             graphic.DOBlendableColor(endValue, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
     }
 }

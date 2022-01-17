@@ -10,8 +10,8 @@
     public class MoveXTransformDOT : UTransformDOT
     {
         [Data]
-        [SerializeField] Transform transform;
-        public override Transform Transform { get => transform; set => transform = value; }
+        [SerializeField] Transform _transform;
+        public override Transform Transform { get => _transform; set => _transform = value; }
 
         [Settings]
         [SerializeField] float endValue;
@@ -22,8 +22,8 @@
         public bool Snapping { get => snapping; set => snapping = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOMoveX(float newEndValue, float newDuration, bool newSnapping)
         {
@@ -35,8 +35,8 @@
 
         public void DOMoveX()
         {
-            transform.DOMoveX(endValue, duration, snapping);
-            @event.Invoke();
+            _transform.DOMoveX(endValue, duration, snapping);
+            _event.Invoke();
         }
     }
 }

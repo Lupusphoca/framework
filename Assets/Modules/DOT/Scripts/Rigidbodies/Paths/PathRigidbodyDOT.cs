@@ -12,8 +12,8 @@
     public class PathRigidbodyDOT : URigidbodyDOT
     {
         [Data]
-        [SerializeField] Rigidbody rigidbody;
-        public override Rigidbody Rigidbody { get => rigidbody; set => rigidbody = value; }
+        [SerializeField] Rigidbody _rigidbody;
+        public override Rigidbody Rigidbody { get => _rigidbody; set => _rigidbody = value; }
 
         [Settings]
         [SerializeField] List<Vector3> waypoints;
@@ -30,8 +30,8 @@
         public Color GizmoColor { get => gizmoColor; set => gizmoColor = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOPath(List<Vector3> newWaypoints, float newDuration, PathType newPathType, PathMode newPathMode, int newResolution, Color newGizmoColor)
         {
@@ -47,8 +47,8 @@
         public void DOPath()
         {
             var newWaypoints = waypoints.ToArray();
-            rigidbody.DOPath(newWaypoints, duration, pathType, pathMode, resolution, gizmoColor);
-            @event.Invoke();
+            _rigidbody.DOPath(newWaypoints, duration, pathType, pathMode, resolution, gizmoColor);
+            _event.Invoke();
         }
     }
 }

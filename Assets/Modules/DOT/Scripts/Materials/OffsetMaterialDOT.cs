@@ -24,8 +24,8 @@
         public int PropertyID { get => propertyID; set => propertyID = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         #region V1
         public void DOOffset_1(Vector2 newEndValue, float newDuration)
@@ -38,7 +38,7 @@
         public void DOOffset_1()
         {
             material.DOOffset(endValue, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
 
@@ -54,7 +54,7 @@
         public void DOOffset_2()
         {
             material.DOOffset(endValue, property, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
 
@@ -70,7 +70,7 @@
         public void DOOffset_3()
         {
             material.DOOffset(endValue, propertyID, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
     }

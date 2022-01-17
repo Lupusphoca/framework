@@ -10,8 +10,8 @@
     public class ScaleZTransformDOT : UTransformDOT
     {
         [Data]
-        [SerializeField] Transform transform;
-        public override Transform Transform { get => transform; set => transform = value; }
+        [SerializeField] Transform _transform;
+        public override Transform Transform { get => _transform; set => _transform = value; }
 
         [Settings]
         [SerializeField] float endValue;
@@ -20,8 +20,8 @@
         public float Duration { get => duration; set => duration = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOScaleZ(float newEndValue, float newDuration)
         {
@@ -32,8 +32,8 @@
 
         public void DOScaleZ()
         {
-            transform.DOScaleZ(endValue, duration);
-            @event.Invoke();
+            _transform.DOScaleZ(endValue, duration);
+            _event.Invoke();
         }
     }
 }

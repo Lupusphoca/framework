@@ -7,6 +7,6 @@
     {
         public abstract Light Light { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

@@ -8,8 +8,8 @@
     public class Rigidbody2DInvoker : UInvoker<Rigidbody2D>
     {
         [Header("Data")]
-        [SerializeField] Rigidbody2D rigidbody2D;
-        public override Rigidbody2D Obj { get => rigidbody2D; set => rigidbody2D = value; }
+        [SerializeField] Rigidbody2D _rigidbody2D;
+        public override Rigidbody2D Obj { get => _rigidbody2D; set => _rigidbody2D = value; }
 
         [Header("Events")]
         [SerializeField] Rigidbody2DEvent rigidbody2DEvent;

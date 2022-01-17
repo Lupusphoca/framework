@@ -10,16 +10,16 @@
     public class ColorCameraDOT : UCameraDOT
     {
         [Data]
-        [SerializeField] Camera camera;
-        public override Camera Camera { get => camera; set => camera = value; }
+        [SerializeField] Camera _camera;
+        public override Camera Camera { get => _camera; set => _camera = value; }
         [SerializeField] Color endValue;
         public Color EndValue { get => endValue; set => endValue = value; }
         [SerializeField] float duration;
         public float Duration { get => duration; set => duration = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOColor(Color newEndValue, float newDuration)
         {
@@ -30,8 +30,8 @@
 
         public void DOColor()
         {
-            camera.DOColor(endValue, duration);
-            @event.Invoke();
+            _camera.DOColor(endValue, duration);
+            _event.Invoke();
         }
     }
 }

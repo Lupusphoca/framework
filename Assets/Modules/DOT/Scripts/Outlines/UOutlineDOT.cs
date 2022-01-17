@@ -8,6 +8,6 @@
     {
         public abstract Outline Outline { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

@@ -11,8 +11,8 @@
     public class LocalPathTransformDOT : UTransformDOT
     {
         [Data]
-        [SerializeField] Transform transform;
-        public override Transform Transform { get => transform; set => transform = value; }
+        [SerializeField] Transform _transform;
+        public override Transform Transform { get => _transform; set => _transform = value; }
 
         [Settings]
         [SerializeField] List<Vector3> waypoints;
@@ -29,8 +29,8 @@
         public Color GizmoColor { get => gizmoColor; set => gizmoColor = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOLocalPath(List<Vector3> newWaypoints, float newDuration, PathType newPathType, PathMode newPathMode, int newResolution, Color newGizmoColor)
         {
@@ -46,8 +46,8 @@
         public void DOLocalPath()
         {
             var newWaypoints = waypoints.ToArray();
-            transform.DOLocalPath(newWaypoints, duration, pathType, pathMode, resolution, gizmoColor);
-            @event.Invoke();
+            _transform.DOLocalPath(newWaypoints, duration, pathType, pathMode, resolution, gizmoColor);
+            _event.Invoke();
         }
     }
 }

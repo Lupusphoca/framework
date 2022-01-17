@@ -10,8 +10,8 @@
     public class ColorLightDOT : ULightDOT
     {
         [Data]
-        [SerializeField] Light light;
-        public override Light Light { get => light; set => light = value; }
+        [SerializeField] Light _light;
+        public override Light Light { get => _light; set => _light = value; }
 
         [Settings]
         [SerializeField] Color color;
@@ -20,8 +20,8 @@
         public float Duration { get => duration; set => duration = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOColor(Color newColor, float newDuration)
         {
@@ -32,8 +32,8 @@
 
         public void DOColor()
         {
-            light.DOColor(color, duration);
-            @event.Invoke();
+            _light.DOColor(color, duration);
+            _event.Invoke();
         }
     }
 }

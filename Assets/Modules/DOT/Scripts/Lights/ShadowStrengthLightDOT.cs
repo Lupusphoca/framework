@@ -10,8 +10,8 @@
     public class ShadowStrengthLightDOT : ULightDOT
     {
         [Data]
-        [SerializeField] Light light;
-        public override Light Light { get => light; set => light = value; }
+        [SerializeField] Light _light;
+        public override Light Light { get => _light; set => _light = value; }
 
         [Settings]
         [SerializeField] float endValue;
@@ -20,8 +20,8 @@
         public float Duration { get => duration; set => duration = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOShadowStrength(float newEndValue, float newDuration)
         {
@@ -32,8 +32,8 @@
 
         public void DOShadowStrength()
         {
-            light.DOShadowStrength(endValue, duration);
-            @event.Invoke();
+            _light.DOShadowStrength(endValue, duration);
+            _event.Invoke();
         }
     }
 }
