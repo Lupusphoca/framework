@@ -1,7 +1,6 @@
 namespace PierreARNAUDET.Core.Helpers
 {
     using UnityEngine;
-    using UnityEngine.Events;
 
     public class GraphUpdateAstarPath : MonoBehaviour
     {

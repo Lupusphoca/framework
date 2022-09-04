@@ -23,8 +23,6 @@
                     flopEvent.Invoke();
                     executeFlip = !executeFlip;
                     break;
-                default:
-                    break;
             }
         }
     }

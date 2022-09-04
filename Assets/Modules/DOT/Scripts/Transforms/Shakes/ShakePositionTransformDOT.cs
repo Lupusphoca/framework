@@ -10,8 +10,8 @@
     public class ShakePositionTransformDOT : UTransformDOT
     {
         [Data]
-        [SerializeField] Transform transform;
-        public override Transform Transform { get => transform; set => transform = value; }
+        [SerializeField] Transform _transform;
+        public override Transform Transform { get => _transform; set => _transform = value; }
 
         [Settings]
         [SerializeField] float duration;
@@ -28,8 +28,8 @@
         public bool FadeOut { get => fadeOut; set => fadeOut = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOShakePosition(float newDuration, float newStrength, int newVibrato, float newRandomness, bool newSnapping, bool newFadeOut)
         {
@@ -44,8 +44,8 @@
 
         public void DOShakePosition()
         {
-            transform.DOShakePosition(duration, strength, vibrato, randomness, snapping, fadeOut);
-            @event.Invoke();
+            _transform.DOShakePosition(duration, strength, vibrato, randomness, snapping, fadeOut);
+            _event.Invoke();
         }
     }
 }

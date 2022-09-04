@@ -10,8 +10,8 @@
     public class ShakeScaleTransformDOT : UTransformDOT
     {
         [Data]
-        [SerializeField] Transform transform;
-        public override Transform Transform { get => transform; set => transform = value; }
+        [SerializeField] Transform _transform;
+        public override Transform Transform { get => _transform; set => _transform = value; }
 
         [Settings]
         [SerializeField] float duration;
@@ -26,8 +26,8 @@
         public bool FadeOut { get => fadeOut; set => fadeOut = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOShakeScale(float newDuration, float newStrength, int newVibrato, float newRandomness, bool newFadeOut)
         {
@@ -41,8 +41,8 @@
 
         public void DOShakeScale()
         {
-            transform.DOShakeScale(duration, strength, vibrato, randomness, fadeOut);
-            @event.Invoke();
+            _transform.DOShakeScale(duration, strength, vibrato, randomness, fadeOut);
+            _event.Invoke();
         }
     }
 }

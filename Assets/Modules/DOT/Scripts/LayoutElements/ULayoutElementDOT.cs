@@ -8,6 +8,6 @@
     {
         public abstract LayoutElement LayoutElement { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

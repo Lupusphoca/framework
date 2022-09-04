@@ -5,8 +5,8 @@
     public class DestroyComponent : MonoBehaviour
     {
         [Header("Data")]
-        [SerializeField] GameObject gameObject;
-        public GameObject GameObject { get => gameObject; set => gameObject = value; }
+        [SerializeField] GameObject _gameObject;
+        public GameObject GameObject { get => _gameObject; set => _gameObject = value; }
 
         /// <summary>
         /// Destroy the given gameobject
@@ -22,9 +22,9 @@
         /// </summary>
         public void DestroyGameObject()
         {
-            if (gameObject != null) {
-                DestroyGameObject(gameObject);
-                gameObject = null;
+            if (_gameObject != null) {
+                DestroyGameObject(_gameObject);
+                _gameObject = null;
             }
         }
     }

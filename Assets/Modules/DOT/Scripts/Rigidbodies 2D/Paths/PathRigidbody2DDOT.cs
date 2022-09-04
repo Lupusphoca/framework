@@ -11,8 +11,8 @@
     public class PathRigidbody2DDOT : URigidbody2DDOT
     {
         [Data]
-        [SerializeField] Rigidbody2D rigidbody2D;
-        public override Rigidbody2D Rigidbody2D { get => rigidbody2D; set => rigidbody2D = value; }
+        [SerializeField] Rigidbody2D _rigidbody2D;
+        public override Rigidbody2D Rigidbody2D { get => _rigidbody2D; set => _rigidbody2D = value; }
 
         [Settings]
         [SerializeField] List<Vector2> waypoints;
@@ -29,8 +29,8 @@
         public Color GizmoColor { get => gizmoColor; set => gizmoColor = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOPath(List<Vector2> newWaypoints, float newDuration, PathType newPathType, PathMode newPathMode, int newResolution, Color newGizmoColor)
         {
@@ -46,8 +46,8 @@
         public void DOPath()
         {
             var newWaypoints = waypoints.ToArray();
-            rigidbody2D.DOPath(newWaypoints, duration, pathType, pathMode, resolution, gizmoColor);
-            @event.Invoke();
+            _rigidbody2D.DOPath(newWaypoints, duration, pathType, pathMode, resolution, gizmoColor);
+            _event.Invoke();
         }
     }
 }

@@ -6,7 +6,7 @@
 
     #region singular
     [Serializable] public class IntStringEvent : UnityEvent<int, string> { }
-    [Serializable] public class StringStringEvent : UnityEvent<string, string> { }
+    [Serializable] public class DoubleStringEvent : UnityEvent<string, string> { }
     #endregion
 
     #region multiple

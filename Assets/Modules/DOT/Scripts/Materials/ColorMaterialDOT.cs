@@ -24,8 +24,8 @@
         public int PropertyID { get => propertyID; set => propertyID = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         #region V1
         public void DOColor_1(Color newEndValue, float newDuration)
@@ -38,7 +38,7 @@
         public void DOColor_1()
         {
             material.DOColor(endValue, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
 
@@ -54,7 +54,7 @@
         public void DOColor_2()
         {
             material.DOColor(endValue, property, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
 
@@ -70,7 +70,7 @@
         public void DOColor_3()
         {
             material.DOColor(endValue, propertyID, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
     }

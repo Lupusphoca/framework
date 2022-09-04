@@ -10,8 +10,8 @@
     public class JumpRigidbody2DDOT : URigidbody2DDOT
     {
         [Data]
-        [SerializeField] Rigidbody2D rigidbody2D;
-        public override Rigidbody2D Rigidbody2D { get => rigidbody2D; set => rigidbody2D = value; }
+        [SerializeField] Rigidbody2D _rigidbody2D;
+        public override Rigidbody2D Rigidbody2D { get => _rigidbody2D; set => _rigidbody2D = value; }
 
         [Settings]
         [SerializeField] Vector2 endValue;
@@ -26,8 +26,8 @@
         public bool Snapping { get => snapping; set => snapping = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOJump(Vector2 newEndValue, float newJumpPower, int newNumJumps, float newDuration, bool newSnapping)
         {
@@ -41,8 +41,8 @@
 
         public void DOJump()
         {
-            rigidbody2D.DOJump(endValue, jumpPower, numJumps, duration, snapping);
-            @event.Invoke();
+            _rigidbody2D.DOJump(endValue, jumpPower, numJumps, duration, snapping);
+            _event.Invoke();
         }
     }
 }

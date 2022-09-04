@@ -115,5 +115,18 @@
             }
         }
         #endregion
+
+        #region RotateTowards
+        [Header("Data : Rotate towards")]
+        [SerializeField] Transform tranformLookAt;  //* Forward vector will face this object
+        public Transform TranformLookAt { get => tranformLookAt; set => tranformLookAt = value; }
+        [SerializeField] Vector3 upAxis; //* Up axis is needed as a referenced to move properly the forward vector of the object
+        public Vector3 UpAxis { get => upAxis; set => upAxis = value; }
+
+        public void LookAt()
+        {
+            target.LookAt(tranformLookAt, upAxis);
+        }
+        #endregion
     }
 }

@@ -24,8 +24,8 @@
         public int PropertyID { get => propertyID; set => propertyID = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         #region V1
         public void DOVector_1(Vector4 newEndValue, string newProperty, float newDuration)
@@ -39,7 +39,7 @@
         public void DOVector_1()
         {
             material.DOVector(endValue, property, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
 
@@ -55,7 +55,7 @@
         public void DOVector_2()
         {
             material.DOVector(endValue, propertyID, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
     }

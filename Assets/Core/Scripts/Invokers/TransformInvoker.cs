@@ -8,8 +8,8 @@
     public class TransformInvoker : UInvoker<Transform>
     {
         [Header("Data")]
-        [SerializeField] Transform transform;
-        public override Transform Obj { get => transform; set => transform = value; }
+        [SerializeField] Transform _transform;
+        public override Transform Obj { get => _transform; set => _transform = value; }
 
         [Header("Events")]
         [SerializeField] TransformEvent invokedTransform;

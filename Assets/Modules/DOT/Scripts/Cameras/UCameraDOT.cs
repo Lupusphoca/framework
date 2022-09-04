@@ -7,6 +7,6 @@
     {
         public abstract Camera Camera { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

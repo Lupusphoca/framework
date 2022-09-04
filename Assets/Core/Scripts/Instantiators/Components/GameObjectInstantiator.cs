@@ -10,12 +10,12 @@
         GameObject instantiateGameObject;
 
         [Header("Data")]
-        [SerializeField] GameObject gameObject;
-        public GameObject GameObject { get => gameObject; set => gameObject = value; }
+        [SerializeField] GameObject _gameObject;
+        public GameObject GameObject { get => _gameObject; set => _gameObject = value; }
         [SerializeField] bool useRoot;
         [SerializeField, ConditionalHide("useRoot", false, false)] Transform root;
         public Transform Root { get => root; set => root = value; }
-        [SerializeField, ConditionalHide("useRoot", false, false)] bool useParent;
+        [SerializeField, ConditionalHide("useRoot", false, false)] bool useAsParent;
         [SerializeField, ConditionalHide("useRoot", false, true)] Vector3 instantiatePoint;
         public Vector3 InstantiatePoint { get => instantiatePoint; set => instantiatePoint = value; }
 
@@ -27,7 +27,7 @@
         /// </summary>
         public void Instantiate ()
         {
-            Instantiate(gameObject);
+            Instantiate(_gameObject);
         }
 
         /// <summary>
@@ -39,7 +39,7 @@
             if (useRoot)
             {
                 instantiateGameObject = Instantiate(newGameObject, root);
-                if (!useParent)
+                if (!useAsParent)
                 {
                     instantiateGameObject.transform.parent = null;
                 }

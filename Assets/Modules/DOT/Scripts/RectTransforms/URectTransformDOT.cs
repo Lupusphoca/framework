@@ -8,6 +8,6 @@
     {
         public abstract RectTransform RectTransform { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

@@ -10,8 +10,8 @@
     public class FieldOfViewCameraDOT : UCameraDOT
     {
         [Data]
-        [SerializeField] Camera camera;
-        public override Camera Camera { get => camera; set => camera = value; }
+        [SerializeField] Camera _camera;
+        public override Camera Camera { get => _camera; set => _camera = value; }
 
         [Settings]
         [SerializeField] float endValue;
@@ -20,8 +20,8 @@
         public float Duration { get => duration; set => duration = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOFieldOfView(float newEndValue, float newDuration)
         {
@@ -32,8 +32,8 @@
 
         public void DOFieldOfView()
         {
-            camera.DOFieldOfView(endValue, duration);
-            @event.Invoke();
+            _camera.DOFieldOfView(endValue, duration);
+            _event.Invoke();
         }
     }
 }

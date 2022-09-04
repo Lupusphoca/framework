@@ -10,8 +10,8 @@
     public class ShakePositionCameraDOT : UCameraDOT
     {
         [Data]
-        [SerializeField] Camera camera;
-        public override Camera Camera { get => camera; set => camera = value; }
+        [SerializeField] Camera _camera;
+        public override Camera Camera { get => _camera; set => _camera = value; }
 
         [Settings]
         [SerializeField] float duration;
@@ -26,8 +26,8 @@
         public bool Fadeout { get => fadeout; set => fadeout = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOShakePosition(float newDuration, float newStrength, int newVibrato, float newRandomness, bool newFadeOut)
         {
@@ -41,8 +41,8 @@
 
         public void DOShakePosition()
         {
-            camera.DOShakePosition(duration, strength, vibrato, randomness, fadeout);
-            @event.Invoke();
+            _camera.DOShakePosition(duration, strength, vibrato, randomness, fadeout);
+            _event.Invoke();
         }
     }
 }

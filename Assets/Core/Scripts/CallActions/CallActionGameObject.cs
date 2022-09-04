@@ -7,13 +7,13 @@
     public class CallActionGameObject : MonoBehaviour
     {
         [Data]
-        [SerializeField] GameObject gameObject;
-        public GameObject GameObject { get => gameObject; set => gameObject = value; }
+        [SerializeField] GameObject _gameObject;
+        public GameObject GameObject { get => _gameObject; set => _gameObject = value; }
 
         #region Destroy
         public void DestroyObject()
         {
-            if (gameObject != null) Destroy(gameObject);
+            if (_gameObject != null) Destroy(_gameObject);
         }
 
         public void DestroyObject(GameObject newGameObject)

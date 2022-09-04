@@ -22,8 +22,8 @@
         public float Duration { get => duration; set => duration = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOColor(Color2 newStartValue, Color2 newEndValue, float newDuration)
         {
@@ -36,7 +36,7 @@
         public void DOColor()
         {
             lineRenderer.DOColor(startValue, endValue, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
     }
 }

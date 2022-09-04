@@ -7,6 +7,6 @@
     {
         public abstract Transform Transform { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

@@ -8,6 +8,6 @@
     {
         public abstract Image Image { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

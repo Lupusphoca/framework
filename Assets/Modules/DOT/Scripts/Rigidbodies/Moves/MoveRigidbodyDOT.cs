@@ -10,8 +10,8 @@
     public class MoveRigidbodyDOT : URigidbodyDOT
     {
         [Data]
-        [SerializeField] Rigidbody rigidbody;
-        public override Rigidbody Rigidbody { get => rigidbody; set => rigidbody = value; }
+        [SerializeField] Rigidbody _rigidbody;
+        public override Rigidbody Rigidbody { get => _rigidbody; set => _rigidbody = value; }
 
         [Settings]
         [SerializeField] Vector3 endValue;
@@ -22,8 +22,8 @@
         public bool Snapping { get => snapping; set => snapping = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOMove(Vector3 newEndValue, float newDuration, bool newSnapping)
         {
@@ -35,8 +35,8 @@
 
         public void DOMove()
         {
-            rigidbody.DOMove(endValue, duration, snapping);
-            @event.Invoke();
+            _rigidbody.DOMove(endValue, duration, snapping);
+            _event.Invoke();
         }
     }
 }

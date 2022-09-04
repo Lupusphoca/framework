@@ -24,8 +24,8 @@
         public int PropertyID { get => propertyID; set => propertyID = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         #region V1
         public void DOFade_1(float newEndValue, float newDuration)
@@ -38,7 +38,7 @@
         public void DOFade_1()
         {
             material.DOFade(endValue, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
 
@@ -54,7 +54,7 @@
         public void DOFade_2()
         {
             material.DOFade(endValue, property, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
 
@@ -70,7 +70,7 @@
         public void DOFade_3()
         {
             material.DOFade(endValue, propertyID, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
     }

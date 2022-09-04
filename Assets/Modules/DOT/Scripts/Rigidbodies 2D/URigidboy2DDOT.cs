@@ -7,6 +7,6 @@
     {
         public abstract Rigidbody2D Rigidbody2D { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

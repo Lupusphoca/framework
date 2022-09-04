@@ -8,6 +8,6 @@
     {
         public abstract Slider Slider { get; set; }
 
-        public abstract UnityEvent @Event { get; set; }
+        public abstract UnityEvent Event { get; set; }
     }
 }

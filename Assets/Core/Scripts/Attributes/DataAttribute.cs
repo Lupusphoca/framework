@@ -7,6 +7,6 @@
     [AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = true)]
     public class DataAttribute : PropertyAttribute
     {
-        public string HeaderName { get => "Data"; }
+        public string HeaderName { get => "Required parameters"; }
     }
 }

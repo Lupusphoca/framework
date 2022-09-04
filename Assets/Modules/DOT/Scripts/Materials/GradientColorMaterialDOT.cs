@@ -22,8 +22,8 @@
         public string Property { get => property; set => property = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         #region V1
         public void DOGradientColor_1(Gradient newEndValue, float newDuration)
@@ -36,7 +36,7 @@
         public void DOGradientColor_1()
         {
             material.DOGradientColor(endValue, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
 
@@ -52,7 +52,7 @@
         public void DOGradientColor_2()
         {
             material.DOGradientColor(endValue, property, duration);
-            @event.Invoke();
+            _event.Invoke();
         }
         #endregion
     }

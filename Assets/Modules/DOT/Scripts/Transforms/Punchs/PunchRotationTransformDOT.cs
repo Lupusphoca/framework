@@ -10,8 +10,8 @@
     public class PunchRotationTransformDOT : UTransformDOT
     {
         [Data]
-        [SerializeField] Transform transform;
-        public override Transform Transform { get => transform; set => transform = value; }
+        [SerializeField] Transform _transform;
+        public override Transform Transform { get => _transform; set => _transform = value; }
 
         [Settings]
         [SerializeField] Vector3 punch;
@@ -24,8 +24,8 @@
         public float Elasticity { get => elasticity; set => elasticity = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOPunchRotation(Vector3 newPunch, float newDuration, int newVibrato, float newElasticity)
         {
@@ -38,8 +38,8 @@
 
         public void DOPunchRotation()
         {
-            transform.DOPunchRotation(punch, duration, vibrato, elasticity);
-            @event.Invoke();
+            _transform.DOPunchRotation(punch, duration, vibrato, elasticity);
+            _event.Invoke();
         }
     }
 }

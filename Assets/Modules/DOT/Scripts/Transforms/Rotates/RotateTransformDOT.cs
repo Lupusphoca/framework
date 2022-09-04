@@ -10,8 +10,8 @@
     public class RotateTransformDOT : UTransformDOT
     {
         [Data]
-        [SerializeField] Transform transform;
-        public override Transform Transform { get => transform; set => transform = value; }
+        [SerializeField] Transform _transform;
+        public override Transform Transform { get => _transform; set => _transform = value; }
 
         [Settings]
         [SerializeField] Vector3 endValue;
@@ -22,8 +22,8 @@
         public RotateMode Mode { get => mode; set => mode = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DORotate(Vector3 newEndValue, float newDuration, RotateMode newMode)
         {
@@ -35,8 +35,8 @@
 
         public void DORotate()
         {
-            transform.DORotate(endValue, duration, mode);
-            @event.Invoke();
+            _transform.DORotate(endValue, duration, mode);
+            _event.Invoke();
         }
     }
 }

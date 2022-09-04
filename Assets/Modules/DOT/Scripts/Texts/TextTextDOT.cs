@@ -27,8 +27,8 @@
         public string ScrambleChars { get => scrambleChars; set => scrambleChars = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DOText(string newEndValue, float newDuration, bool newRichTextEnabled, ScrambleMode newScrambleMode, string newScrambleChars)
         {
@@ -43,7 +43,7 @@
         public void DOText()
         {
             text.DOText(endValue, duration, richTextEnabled, scrambleMode, scrambleChars);
-            @event.Invoke();
+            _event.Invoke();
         }
     }
 }

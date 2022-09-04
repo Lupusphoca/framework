@@ -5,8 +5,8 @@
     public class CallActionRigidbody2D : MonoBehaviour
     {
         [Header("Data")]
-        [SerializeField] Rigidbody2D rigidbody2D;
-        public Rigidbody2D Rigidbody2D { get => rigidbody2D; set => rigidbody2D = value; }
+        [SerializeField] Rigidbody2D _rigidbody2D;
+        public Rigidbody2D Rigidbody2D { get => _rigidbody2D; set => _rigidbody2D = value; }
 
         #region AddForce
         [Header("Data : AddForce")]
@@ -20,9 +20,9 @@
         /// </summary>
         public void AddForce()
         {
-            if (rigidbody2D != null)
+            if (_rigidbody2D != null)
             {
-                rigidbody2D.AddForce(forceVector2, forceMode2D);
+                _rigidbody2D.AddForce(forceVector2, forceMode2D);
             }
         }
 
@@ -32,9 +32,9 @@
         /// <param name="newVector3Array">Direction and force applied to the rigidbody2D</param>
         public void AddForce(Vector2 newforceVector2)
         {
-            if (rigidbody2D != null)
+            if (_rigidbody2D != null)
             {
-                rigidbody2D.AddForce(newforceVector2);
+                _rigidbody2D.AddForce(newforceVector2);
             }
         }
 
@@ -45,9 +45,9 @@
         /// <param name="forceMode2D">Specified to type of force you want to add</param>
         public void AddForce(Vector2 newforceVector2, ForceMode2D newForceMode2D)
         {
-            if (rigidbody2D != null)
+            if (_rigidbody2D != null)
             {
-                rigidbody2D.AddForce(newforceVector2, newForceMode2D);
+                _rigidbody2D.AddForce(newforceVector2, newForceMode2D);
             }
         }
         #endregion
@@ -55,7 +55,7 @@
         #region StopVelocity
         public void StopVelocity()
         {
-            rigidbody2D.velocity = Vector2.zero;
+            _rigidbody2D.velocity = Vector2.zero;
         }
         #endregion
     }

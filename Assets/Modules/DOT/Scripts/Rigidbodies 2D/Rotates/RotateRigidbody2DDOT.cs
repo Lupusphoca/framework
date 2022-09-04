@@ -10,8 +10,8 @@
     public class RotateRigidbody2DDOT : URigidbody2DDOT
     {
         [Data]
-        [SerializeField] Rigidbody2D rigidbody2D;
-        public override Rigidbody2D Rigidbody2D { get => rigidbody2D; set => rigidbody2D = value; }
+        [SerializeField] Rigidbody2D _rigidbody2D;
+        public override Rigidbody2D Rigidbody2D { get => _rigidbody2D; set => _rigidbody2D = value; }
 
         [Settings]
         [SerializeField] float endValue;
@@ -20,8 +20,8 @@
         public float Duration { get => duration; set => duration = value; }
 
         [Events]
-        [SerializeField] UnityEvent @event;
-        public override UnityEvent @Event { get => @event; set => @event = value; }
+        [SerializeField] UnityEvent _event;
+        public override UnityEvent Event { get => _event; set => _event = value; }
 
         public void DORotate(float newEndValue, float newDuration)
         {
@@ -32,8 +32,8 @@
 
         public void DORotate()
         {
-            rigidbody2D.DORotate(endValue, duration);
-            @event.Invoke();
+            _rigidbody2D.DORotate(endValue, duration);
+            _event.Invoke();
         }
     }
 }
