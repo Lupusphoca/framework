@@ -22,6 +22,7 @@
     [Serializable] public class GradientEvent : UnityEvent<Gradient> { }
     [Serializable] public class IntEvent : UnityEvent<int> { }
     [Serializable] public class ImageEvent : UnityEvent<Image> { }
+    [Serializable] public class ObjectEvent : UnityEvent<object> {}
     [Serializable] public class PhysicsMaterial2DEvent : UnityEvent<PhysicsMaterial2D> { }
     [Serializable] public class PointerEventDataEvent : UnityEvent<PointerEventData> { }
     [Serializable] public class QuaternionEvent : UnityEvent<Quaternion> { }
@@ -33,6 +34,7 @@
     [Serializable] public class RigidbodyInterpolation2DEvent : UnityEvent<RigidbodyInterpolation2D> { }
     [Serializable] public class RigidbodySleepMode2DEvent : UnityEvent<RigidbodySleepMode2D> { }
     [Serializable] public class RigidbodyType2DEvent : UnityEvent<RigidbodyType2D> { }
+    [Serializable] public class SpriteEvent : UnityEvent<Sprite> { }
     [Serializable] public class StringEvent : UnityEvent<string> { }
     [Serializable] public class Texture2DEvent : UnityEvent<Texture2D> { }
     [Serializable] public class TransformEvent : UnityEvent<Transform> { }
@@ -42,6 +44,9 @@
 
     #region multiple
     [Serializable] public class GameObjectListEvent : UnityEvent<List<GameObject>> { }
+    [Serializable] public class ObjectListEvent : UnityEvent<List<object>> { }
+    [Serializable] public class StringArrayEvent : UnityEvent<string[]> { }
+    [Serializable] public class StringListEvent : UnityEvent<List<string>> { }
     [Serializable] public class Vector3ListEvent : UnityEvent<List<Vector3>> { }
     [Serializable] public class Vector3ArrayEvent : UnityEvent<Vector3[]> { }
     #endregion
