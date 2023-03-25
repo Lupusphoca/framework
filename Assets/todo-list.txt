@@ -1,4 +1,0 @@
-# Faire un linker IN - OUT basé sur un ID que le IN va chercher parmis tout les OUT similaire à son abstraction
-# Faire un template de script
-# L'abstraction du UComparer est inutile, créer une fonction étalon dans la classe mère (virtual?)
-# Un script qui garde en mémoire tout les changements d'état de chaque component et gameobjects. Pour savoir si, par exemple, lors d'un restart de partie tout le nécessaire a était reset.
